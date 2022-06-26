@@ -137,7 +137,7 @@
 	/*-----------------------------------------------------*/
   	/* Navigation Menu
    ------------------------------------------------------ */  
-   var toggleButton = $('.menu-toggle'),
+   /*var toggleButton = $('.menu-toggle'),
        nav = $('.main-navigation');
 
    // toggle button
@@ -147,7 +147,7 @@
 		toggleButton.toggleClass('is-clicked');
 		nav.slideToggle();
 
-	});
+	});*/
 
    // nav items
   	nav.find('li a').on("click", function() {   
@@ -176,7 +176,7 @@
 
 			if (direction === "up") active_section = active_section.prev();
 
-			var active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');			
+			var active_link = $('#main-nav-wrap a[href="' + active_section.attr("id") + '"]');			
 
          navigation_links.parent().removeClass("current");
 			active_link.parent().addClass("current");
