@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: auto;
+        }
+        form input, form textarea, form button{
+            padding: 20px;
+            margin-bottom: 20px;
+            outline: none;
+            border: none;
+            background-color: #ddd;
+        }
+        form button{
+            cursor: pointer;
+            background-color: rgb(219, 71, 71);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center py-5">Email me</h1>
+<form action="#" class="contact_form">
+    <input class="name" type="text" placeholder="Name"/>
+    <textarea class="msg" cols="5" rows="5" placeholder="msg"></textarea>
+    <button type="submit">send</button>
+</form>
+
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        const form=document.querySelector('.contact_form');
+        function sendmsg(e){
+            e.preventDefault();
+            const name=document.querySelector('.name'),
+                    msg=document.querySelector('.msg');
+
+            Email.send({
+            SecureToken : "91fa1a4b-53af-4658-90b1-24f09ab9e65b",
+            To : 'selmanfariz18@gmail.com',
+            Name: name.value,
+            From : 'selmanfariz18@gmail.com',
+            Subject : "contact form",
+            Body : 'Name:'+name.value+" Mesage:"+msg.value
+            }).then(
+                message => alert(message)
+            );
+            console.log(value.msg);
+        }
+        form.addEventListener('submit',sendmsg);
+    </script>
+</body>
+</html>
